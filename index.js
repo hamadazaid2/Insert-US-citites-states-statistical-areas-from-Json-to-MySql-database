@@ -3,10 +3,10 @@ const fs = require("fs");
 
 // Create a connection to the MySQL server
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "P@ssword2023",
-  database: "casting2",
+  host: "YOUR_HOST",
+  user: "YOUR_USER",
+  password: "YOUR_PASSWORD",
+  database: "YOUR_DATABASE_NAME",
 });
 
 // Connect to the database
@@ -19,10 +19,9 @@ connection.connect((err) => {
 
   // SQL statement to create a table for cities
   const createTableSQL = `
-    CREATE TABLE IF NOT EXISTS PM_ProjectGeographicLookups (
+    CREATE TABLE IF NOT EXISTS YOUR_TABLE_NAME (
       id INT AUTO_INCREMENT PRIMARY KEY,
-      city_name VARCHAR(255) NOT NULL,
-      country_name VARCHAR(255) NOT NULL
+      YOUR_TABLE_COLUMNS
     );
   `;
 
@@ -41,7 +40,7 @@ connection.connect((err) => {
 
     // SQL statement to insert data into the cities table
     const insertDataSQL =
-      "INSERT INTO PM_ProjectGeographicLookups (code, name, group_code) VALUES ?";
+      "INSERT INTO YOUR_TABLE_NAME (YOUR_TABLE_COLUMN, YOUR_TABLE_COLUMN, ...) VALUES ?";
 
     // Execute the SQL statement to insert data
     connection.query(
